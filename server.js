@@ -28,5 +28,10 @@ const path = require('path');
 app.use('/client',express.static(path.join(__dirname, 'client')));
 
 // port definition
-
+/*
 app.listen(process.env.port || 5000);
+*/
+var server = app.listen(process.env.PORT || 5000, function () {
+    var port = server.address().port;
+    console.log("Express is working on port " + port);
+  });
