@@ -1,0 +1,24 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "pehla pehla app for deployment full stact",
+  "main": "server.js",
+  "scripts": {
+    "@comment scripts": "['node server will start the server','nodemon server will restart it if anything changes.']",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Ali Iqbal",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment-timezone": "^0.5.28",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
