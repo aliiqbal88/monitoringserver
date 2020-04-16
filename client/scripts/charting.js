@@ -9,7 +9,7 @@ const init = function (e) {
     var timeFormat = 'HH:mm';
     let recData // data received
     // fetching data
-    let urlFetch = 'http://localhost:5000/api/records/fetchData';
+    let urlFetch = 'https://monitoringserver.herokuapp.com/api/records/fetchData';
     fetch(urlFetch, { mode: 'cors' })
         .then(res => {
             return res.json();
