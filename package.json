@@ -4,7 +4,7 @@
   "description": "pehla pehla app for deployment full stact",
   "main": "server.js",
   "scripts": {
-    "@comment scripts": "['node server will start the server','nodemon server will restart it if anything changes.']",
+    
     "start": "node server.js",
     "server": "nodemon server.js"
   },

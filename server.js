@@ -28,5 +28,5 @@ const path = require('path');
 app.use('/client',express.static(path.join(__dirname, 'client')));
 
 // port definition
-const port = process.env.port || 5000;
-app.listen(port,()=> console.log(`server started on port ${port}`));
+
+app.listen(process.env.port || 5000);
