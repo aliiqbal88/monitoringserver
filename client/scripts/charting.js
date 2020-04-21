@@ -14,6 +14,7 @@ const init = function (e) {
     console.log('fetching');
     fetch(urlFetch, { mode: 'cors' })
         .then(res => {
+            console.log('hereitisfetch');
             return res.json();
         })
         .then(jsonData => {
