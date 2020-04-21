@@ -107,7 +107,7 @@ router.get('/fetchData',cors(),(req,res)=>{
         }).then(data=> {
             console.log('fetchHit2');
             //console.log(data[0].inverterData);
-            
+            console.log(data[1]);
             res.json(data)}
         );
 })

@@ -31,6 +31,8 @@ app.use('/client',express.static(path.join(__dirname, 'client')));
 /*
 app.listen(process.env.port || 5000);
 */
+
+//console.log(process.env.NODE_ENV)
 var server = app.listen(process.env.PORT || 5000, function () {
     var port = server.address().port;
     console.log("Express is working on port " + port);
