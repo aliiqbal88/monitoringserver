@@ -173,7 +173,7 @@ const init = function (e) {
 
             //chartupdate
             //setInterval(chartUpdate,4000,massPopChart);
-        });
+        }).catch(()=>console.log('sumtingwong'));
     
     
 
