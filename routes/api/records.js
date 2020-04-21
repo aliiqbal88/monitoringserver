@@ -49,6 +49,13 @@ router.post('/monitoring',(req,res)=>{
         .then(data=>{
             console.log('here This Was saved');
             console.log(data);
+            Record.deleteMany(
+                {
+                    date:{$lt:new Date(dateYear,dateMonth,dateDate,3,0,0)}
+                }
+            ).then(()=>
+                console.log('deleted')
+            );
             res.send('Data Received Successfully')
         })
         
@@ -71,14 +78,34 @@ router.get('/fetchData',cors(),(req,res)=>{
 
     let date1 = new Date(2020,4,5,0,59,59);
     let date2 = new Date(2020,4,6,0,59,59);
-    console.log(date1);
-    console.log(date2);
+    let date3 = new Date();
+    let date4 = new Date();
+    
+    console.log(date3);
+    console.log(date4);
+
+    date3.setHours(1,1,1,1);
+    //date3.setMinutes(1);
+    
+    date4.setHours(23,59,59,59);
+    //date4.setMinutes(59);
+    //console.log(date1);
+    //console.log(date2);
+    let dateDate = date3.getDate();
+    let dateMonth = date3.getMonth();
+    let dateYear = date3.getFullYear();
+    console.log(dateDate);
+    console.log(dateMonth);
+    console.log(dateYear);
+    
     Record.find(
         {
-            date:{$gte:new Date(2020,3,13,0,59,59), $lt:new Date(2020,3,14,0,59,59)}
+            date:{$gte:new Date(dateYear,dateMonth,dateDate,3,59,59), $lt:new Date(dateYear,dateMonth,dateDate,20,0,0)}
+            //date:{$gte:date3, $lt:date4}
         }).then(data=> {
             console.log('fetchHit');
-            console.log(data[0].inverterData);
+            //console.log(data[0].inverterData);
+            
             res.json(data)}
         );
 })

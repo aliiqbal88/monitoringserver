@@ -10,6 +10,7 @@ const init = function (e) {
     let recData // data received
     // fetching data
     let urlFetch = 'https://monitoringserver.herokuapp.com/api/records/fetchData';
+    //let urlFetch = 'http://localhost:5000/api/records/fetchData';
     fetch(urlFetch, { mode: 'cors' })
         .then(res => {
             return res.json();
