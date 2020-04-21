@@ -20,6 +20,10 @@ const moment = require('moment-timezone');
 
 router.post('/monitoring',(req,res)=>{
     console.log('POSThit')
+    let datePost = new Date();
+    let dateDatePost = datePost.getDate();
+    let dateMonthPost = datePost.getMonth();
+    let dateYearPost = datePost.getFullYear();
     var newObject = req.body;
     var weatherDataTemp = req.body[0]
     newObject.shift();
@@ -51,7 +55,7 @@ router.post('/monitoring',(req,res)=>{
             console.log(data);
             Record.deleteMany(
                 {
-                    date:{$lt:new Date(dateYear,dateMonth,dateDate,3,0,0)}
+                    date:{$lt:new Date(dateYearPost,dateMonthPost,dateDatePost,3,0,0)}
                 }
             ).then(()=>
                 console.log('deleted')
@@ -76,27 +80,25 @@ router.get('/fetchData',cors(),(req,res)=>{
     let today = new Date();
     
 
-    let date1 = new Date(2020,4,5,0,59,59);
-    let date2 = new Date(2020,4,6,0,59,59);
+    //let date1 = new Date(2020,4,5,0,59,59);
+    //let date2 = new Date(2020,4,6,0,59,59);
     let date3 = new Date();
-    let date4 = new Date();
+    //let date4 = new Date();
     
-    console.log(date3);
-    console.log(date4);
+    //console.log(date3);
+    //console.log(date4);
 
-    date3.setHours(1,1,1,1);
+    //date3.setHours(1,1,1,1);
     //date3.setMinutes(1);
     
-    date4.setHours(23,59,59,59);
+    //date4.setHours(23,59,59,59);
     //date4.setMinutes(59);
     //console.log(date1);
     //console.log(date2);
     let dateDate = date3.getDate();
     let dateMonth = date3.getMonth();
     let dateYear = date3.getFullYear();
-    console.log(dateDate);
-    console.log(dateMonth);
-    console.log(dateYear);
+    
     
     Record.find(
         {
