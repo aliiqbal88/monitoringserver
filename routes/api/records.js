@@ -55,7 +55,7 @@ router.post('/monitoring',(req,res)=>{
                 }
             ).then(()=>
                 console.log('deleted')
-            );
+            ).catch(()=>console.log('deleteErr'));
             res.send('Data Received Successfully')
         })
         
@@ -103,7 +103,7 @@ router.get('/fetchData',cors(),(req,res)=>{
             date:{$gte:new Date(dateYear,dateMonth,dateDate,3,59,59), $lt:new Date(dateYear,dateMonth,dateDate,20,0,0)}
             //date:{$gte:date3, $lt:date4}
         }).then(data=> {
-            console.log('fetchHit');
+            console.log('fetchHit2');
             //console.log(data[0].inverterData);
             
             res.json(data)}
