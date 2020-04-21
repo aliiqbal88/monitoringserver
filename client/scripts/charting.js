@@ -15,6 +15,8 @@ const init = function (e) {
     fetch(urlFetch, { mode: 'cors' })
         .then(res => {
             console.log('hereitisfetch');
+            console.log(res);
+            console.log('resFinish');
             return res.json();
         })
         .then(jsonData => {
