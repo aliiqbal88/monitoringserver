@@ -106,8 +106,8 @@ router.get('/fetchData',cors(),(req,res)=>{
             //date:{$gte:date3, $lt:date4}
         }).then(data=> {
             console.log('fetchHit2');
-            console.log(data[0].date);
-            //console.log(data[1]);
+            //console.log(data[0].date);
+            console.log(data);
             res.json(data)}
         );
 })
