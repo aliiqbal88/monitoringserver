@@ -28,7 +28,16 @@ const init = function (e) {
             var lastPacket = recData[recData.length-1];
             console.log('lastPacket');
             console.log(lastPacket);
+            var currentRadiation = lastPacket.weatherData.WSolarRadiation;
+            var currentAmbentTemp = lastPacket.weatherData.WAmbientTemperature;
+            var currentModuleTemp = lastPacket.weatherData.WPVModuleTemperature;
+            var currentWindSpeed = lastPacket.weatherData.WWindSpeed;
+            console.log(currentRadiation);
 
+            document.getElementById("irradianceValue").innerHTML = currentRadiation+ "W/m sq. \xB0";
+            document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp+ " \xB0C";
+            document.getElementById("moduleTempValue").innerHTML = currentModuleTemp+ " \xB0C";
+            document.getElementById("windSpeedValue").innerHTML = currentWindSpeed+ " m/s";
             
             
             //Global Options

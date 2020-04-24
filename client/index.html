@@ -1,39 +1,41 @@
-<style>
-body{
-  background-color:rgba(59, 124, 209, 0.479) !important;
-  border-color: blue;
-  border-width: 4px;
-  border-style:dotted;
-}
+<!-- <style>
+  body {
+    background-color: rgba(59, 124, 209, 0.479) !important;
+    border-color: blue;
+    border-width: 4px;
+    border-style: dotted;
+  }
 
-.header{
-  width:100%;
-  height: 100px;
-  border-color: green;
-  border-width: 2px;
-  border-style:dotted;
-  background-color:#ebd6ea;
-}
-.container{
-  border-color: red;
-  border-width: 1px;
-  border-style:dotted;
-  background-color:#ebd6ea;
- 
-}
+  .header {
+    width: 100%;
+    height: 100px;
+    border-color: green;
+    border-width: 2px;
+    border-style: dotted;
+    background-color: #ebd6ea;
+  }
 
-.icon{
-  height:100px;
-  width:100px;
-  background-color:plum;
-  padding:10px;
-}
-</style>
+  .container {
+    border-color: red;
+    border-width: 1px;
+    border-style: dotted;
+    background-color: #ebd6ea;
+
+  }
+
+  .icon {
+    height: 100px;
+    width: 100px;
+    background-color: plum;
+    padding: 10px;
+  }
+</style> -->
 
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,32 +44,116 @@ body{
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/0.6.3/chartjs-plugin-zoom.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="styleSheet.css">
   <title>My Chart.js charset</title>
 </head>
+
 <body>
-  <div class="header">
+  <div class="mainContainer">
+
+    <div class="header">
+      Fixed Banner
+    </div>
+
+    <div class="dataContainer">
+      <div id="chart">
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div id="inverterValues">
+        <div id="outputPower" class="box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like">
+            </div>
+            Current Power Generation:
+            <div id="outputPowerValue">
+              550 kW
+            </div>
+          </div>
+        </div>
+
+        <div id="dailyYield" class="box">
+          dailyYield
+        </div>
+        <div id="totalYield" class="box">
+          totalYield
+        </div>
+        <div id="moneySavedToday" class="box">
+          moneySavedToday
+        </div>
+        <div id="moneySavedTotal" class="box">
+          moneySavedTotal
+        </div>
+      </div>
+
+      <div id="weatherValues">
+        <div id="irradiance" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like">
+            </div>
+            Current IrradianceValue:
+            <div id="irradianceValue" class="weatherValues">
+              0 w/m sq.
+            </div>
+          </div>
+      </div>
+        <div id="ambientTemp" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like">
+            </div>
+            Ambient Temperature:
+            <div id="ambientTempValue" class="weatherValues">
+              0 °C
+            </div>
+          </div>
+        </div>
+        <div id="moduleTemp" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like">
+            </div>
+            Module Temperature:
+            <div id="moduleTempValue" class="weatherValues">
+              0 °C
+            </div>
+          </div>
+        </div>
+        <div id="windSpeed" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like">
+            </div>
+            Wind Speed:
+            <div id="windSpeedValue" class="weatherValues">
+              0 m/s
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
   </div>
-  <div class="container">
-
-    <canvas id="myChart"></canvas>
-
-  </div>
-
-  <div>
+  <!-- <div>
     <h1>MonoIsGreeeeat</h1>
-
   </div>
-  <div class = "icon">
+
+  <div class="icon">
     <img src="svg/like.svg" alt="like">
-  </div>
+  </div> -->
 
-  <script src = './scripts/charting.js'>
-    
+  <script src='./scripts/charting.js'>
+
   </script>
 
 </body>
+
 </html>
