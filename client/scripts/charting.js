@@ -24,8 +24,14 @@ const init = function (e) {
             console.log("recData");
             console.log(recData);
 
-            //Global Options
+            //  display of other items
+            var lastPacket = recData[recData.length-1];
+            console.log('lastPacket');
+            console.log(lastPacket);
 
+            
+            
+            //Global Options
             Chart.defaults.global.defaultFontFamily = 'Lato';
             Chart.defaults.global.defaultFontSize = 18;
             Chart.defaults.global.defaultFontColor = '#777';
