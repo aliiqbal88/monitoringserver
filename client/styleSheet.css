@@ -49,6 +49,13 @@ body {
         background-color: #ebd6ea;
 
     }
+        #ecoPlane{
+            grid-area: 4 / 1 / 5 / 3;
+            border-color:black;
+            border-width: 2px;
+            border-style: dotted;
+            
+        }
         #chart{
             grid-area: 1 / 3 / 4 / 7;
             border-color:black;
@@ -91,9 +98,9 @@ body {
                 grid-area: 3/2/4/3;
             }
         
-        #weatherValues{
-            grid-area: 4/1/5/7;
-            border: 2px solid blue;
+        #weatherPlane{
+            grid-area: 4/3/5/7;
+            border: 2px solid rgba(77, 202, 39, 0.582);
             display: grid;
             gap:20px;
             grid-template-columns: repeat(4,1fr);
@@ -123,7 +130,7 @@ body {
                     font-size: xx-large;
                     margin-top: 20px;
                 } */
-                .weatherValues{
+                .weatherPlane{
                     font-size: xx-large;
                     margin-top: 20px;
                 }
@@ -153,4 +160,8 @@ body {
     width: 50px;
     
     margin: 0 auto;
+  }
+
+  .hheight{
+    height: 100%;
   }
