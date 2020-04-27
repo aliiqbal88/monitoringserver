@@ -1,5 +1,6 @@
 "use strict"
-export var lastPacketExport = [];
+export var ecoDataExport = {totalYield:0};
+
 
 
 
@@ -10,7 +11,8 @@ document.addEventListener('DOMContentLoaded',function(){setInterval(init,3*60*10
 const init = function (e) {
     let myChart = document.getElementById('myChart').getContext('2d');
     var timeFormat = 'HH:mm';
-    let recData // data received
+    let recData; // filtered for inverterData success
+    let wRecData; // filtered for weatherData success
     // fetching data
     let urlFetch = 'https://monitoringserver.herokuapp.com/api/records/fetchData';
     //let urlFetch = 'http://localhost:5000/api/records/fetchData';
@@ -23,24 +25,26 @@ const init = function (e) {
             return res.json();
         })
         .then(jsonData => {
-            recData = jsonData;     // @recdata is fetched data
-            console.log("recData");
-            console.log(recData);
+            recData = jsonData.filter(pkt=>pkt.iPktSuccess==true);     // @recdata is fetched data and filtered for inverter succfess
+            wRecData = jsonData.filter((pkt=>pkt.wPktSuccess==true))    // recData for weather success
+            console.log("jsonData Received");
+            console.log(jsonData);
 
             //  display of other items
-            var lastPacket = recData[recData.length-1];
-            console.log('lastPacket');
-            console.log(lastPacket);
+            var wLastPacket = wRecData[wRecData.length-1];
+            var iLastPacket = recData[recData.length -1];
+            console.log('wLastPacket');
+            console.log(wLastPacket);
             
-            lastPacketExport = lastPacket;
+            
 
-            var currentRadiation = lastPacket.weatherData.WSolarRadiation;
-            var currentAmbentTemp = lastPacket.weatherData.WAmbientTemperature;
-            var currentModuleTemp = lastPacket.weatherData.WPVModuleTemperature;
-            var currentWindSpeed = lastPacket.weatherData.WWindSpeed;
+            var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
+            var currentAmbentTemp = wLastPacket.weatherData.WAmbientTemperature;
+            var currentModuleTemp = wLastPacket.weatherData.WPVModuleTemperature;
+            var currentWindSpeed = wLastPacket.weatherData.WWindSpeed;
             console.log(currentRadiation);
 
-            document.getElementById("irradianceValue").innerHTML = currentRadiation+ "W/m sq. \xB0";
+            document.getElementById("irradianceValue").innerHTML = currentRadiation+ " W/m sq.";
             document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp+ " \xB0C";
             document.getElementById("moduleTempValue").innerHTML = currentModuleTemp+ " \xB0C";
             document.getElementById("windSpeedValue").innerHTML = currentWindSpeed+ " m/s";
@@ -61,6 +65,26 @@ const init = function (e) {
             // console.log("Old Date corrected " + oldDateCorrected.getHours()+":"+oldDateCorrected.getMinutes()+":"+oldDateCorrected.getSeconds());
             // console.log("Date corrected " + dateCorrected);
 
+            let dailyYieldValue = iLastPacket.inverterData.reduce((acc,iPoint)=>{
+                return (acc+iPoint.IDailyPowerYield)
+            },0);
+            let totalYieldValue = iLastPacket.inverterData.reduce((acc,iPoint)=>{
+                return (acc+iPoint.ITotalPowerYield)
+            },0)
+            let currentPowerValue = iLastPacket.inverterData.reduce((acc,iPoint)=>{
+                return (acc+iPoint.IActivePower)
+            },0);
+
+            console.log('cpo:' + currentPowerValue + ", dYie: " + dailyYieldValue + ", tyie: "+ totalYieldValue);
+            ecoDataExport.totalYield = totalYieldValue;
+
+
+            document.getElementById("outputPowerValue").innerHTML = currentPowerValue+ " W";
+            document.getElementById("dailyYieldValue").innerHTML = dailyYieldValue + " kWh";
+            document.getElementById("totalYieldValue").innerHTML = totalYieldValue + " kWh.";
+            document.getElementById("moneySavedTodayValue").innerHTML = "Rs. " + Math.round(dailyYieldValue*20);
+            document.getElementById("moneySavedTotalValue").innerHTML = "Rs. " + Math.round(totalYieldValue*20);
+
             let chartData = recData.map(dataPoint => {
                 return {
                     //x: dataPoint.date.substring(11, 19),
@@ -71,7 +95,7 @@ const init = function (e) {
                 }
             });
 
-            let solarChartData = recData.map(dataPoint=>{
+            let solarChartData = wRecData.map(dataPoint=>{
                 return{
                     x: formatTime(dataPoint.date),
                     y: dataPoint.weatherData.WSolarRadiation

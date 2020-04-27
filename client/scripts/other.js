@@ -1,6 +1,7 @@
 "use strict"
 
-import {lastPacketExport} from './charting.js'
+import {ecoDataExport} from './charting.js'
+
 
 console.log('beforeJquery');
 
@@ -9,19 +10,22 @@ var ecoCycle = [{
         title: "Coal Saved:",
         icon: 'svg/coal.svg',
         value: 0,
-        unit: "Tonnes"
+        unit: " kg",
+        factor: 0.34
     },
     {
         title:"Trees Saved",
         icon:"svg/tree.svg",
         value: 0,
-        unit: ""
+        unit: "",
+        factor: 0.0214
     },
     {
         title: "CO2 Reduced",
         icon: 'svg/co2.svg',
         value: 0,
-        unit: "Tonnes"
+        unit: " kg",
+        factor: 0.544
     }
 
 ]
@@ -36,8 +40,10 @@ $(document).ready(function(){
                 $("#ecoLabel").text(ecoCycle[ecoIter].title);
                 //console.log(ecoCycle[ecoIter].icon);
                 $("#iconPath").attr('src',ecoCycle[ecoIter].icon);
+                $("#ecoValue").text(Math.round(ecoCycle[ecoIter].factor*ecoDataExport.totalYield)+ecoCycle[ecoIter].unit);
                 ecoIter= (ecoIter+1)%ecoCycle.length;
-                
+
+                //console.log(ecoDataExport);
             })
             .fadeIn(1000);
     }, 5000);
