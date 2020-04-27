@@ -43,10 +43,15 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
 
+  <script src='./scripts/charting.js' type="module"> </script>
+  <script src='./scripts/other.js' type="module"> </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/0.6.3/chartjs-plugin-zoom.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/0.6.3/chartjs-plugin-zoom.js"></script> -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styleSheet.css">
   <title>My Chart.js charset</title>
@@ -68,26 +73,61 @@
         <div id="outputPower" class="box">
           <div class="allCenter">
             <div class="icon">
-              <img src="svg/like.svg" alt="like">
+              <img src="svg/like.svg" alt="like" class="iconDim">
             </div>
             Current Power Generation:
             <div id="outputPowerValue">
-              550 kW
+              0 kW
             </div>
           </div>
         </div>
 
-        <div id="dailyYield" class="box">
-          dailyYield
+        <div id="dailyYield" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like" class="iconDim">
+            </div>
+            Daily Yield:
+            <div id="dailyYieldValue" class="weatherPlane">
+              0 kWh
+            </div> 
+          </div>
         </div>
-        <div id="totalYield" class="box">
-          totalYield
+
+        <div id="totalYield" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like" class="iconDim">
+            </div>
+            Total Yield:
+            <div id="totalYieldValue" class="weatherPlane">
+              0 kWh
+            </div> 
+          </div>
         </div>
-        <div id="moneySavedToday" class="box">
-          moneySavedToday
+
+        <div id="moneySavedToday" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like" class="iconDim">
+            </div>
+            Revenue Saved (Today):
+            <div id="moneySavedTodayValue" class="weatherPlane" >
+              Rs. 0
+            </div> 
+          </div>
         </div>
-        <div id="moneySavedTotal" class="box">
-          moneySavedTotal
+
+        <div id="moneySavedTotal" class="weatherStyle box">
+          <div class="allCenter">
+            <div class="icon">
+              <img src="svg/like.svg" alt="like" class="iconDim">
+            </div>
+            Revenue Saved (Total):
+            <div id="moneySavedTotalValue" class="weatherPlane">
+              Rs. 0
+            </div> 
+          </div>
         </div>
       </div>
 
@@ -95,9 +135,9 @@
         <div id="irradiance" class="weatherStyle box">
           <div class="allCenter">
             <div class="icon">
-              <img src="svg/like.svg" alt="like">
+              <img src="svg/sun.svg" alt="like" class="iconDim">
             </div>
-            Current IrradianceValue:
+            Current Irradiance:
             <div id="irradianceValue" class="weatherPlane">
               0 w/m sq.
             </div>
@@ -106,7 +146,7 @@
         <div id="ambientTemp" class="weatherStyle box">
           <div class="allCenter">
             <div class="icon">
-              <img src="svg/like.svg" alt="like">
+              <img src="svg/temperature.svg" alt="like" class="iconDim">
             </div>
             Ambient Temperature:
             <div id="ambientTempValue" class="weatherPlane">
@@ -117,7 +157,7 @@
         <div id="moduleTemp" class="weatherStyle box">
           <div class="allCenter">
             <div class="icon">
-              <img src="svg/like.svg" alt="like">
+              <img src="svg/solarTemp.svg" alt="like" class="iconDim">
             </div>
             Module Temperature:
             <div id="moduleTempValue" class="weatherPlane">
@@ -128,7 +168,7 @@
         <div id="windSpeed" class="weatherStyle box hheight">
           <div class="allCenter">
             <div class="icon">
-              <img src="svg/like.svg" alt="like">
+              <img src="svg/wind.svg" alt="like" class="iconDim">
             </div>
             Wind Speed:
             <div id="windSpeedValue" class="weatherPlane">
@@ -139,9 +179,10 @@
       </div>
 
       <div id="ecoPlane" class="weatherStyle box">
-        <div class="allCenter">
+        <div id="ecoShow" class="allCenter">
           <div class="icon">
-            <img id="iconPath" src="svg/like.svg" alt="like">
+            <img id="iconPath" class="iconDim" src="svg/coal.svg" alt="like">
+            <!-- <iframe id="iconPath" src="svg/coal.svg"></iframe> -->
           </div>
           <div id="ecoLabel"> 
             Coal Saved:
@@ -164,9 +205,9 @@
     <img src="svg/like.svg" alt="like">
   </div> -->
 
-  <script src='./scripts/charting.js'>
+  
 
-  </script>
+  
 
 </body>
 

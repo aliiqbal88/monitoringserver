@@ -1,4 +1,7 @@
 "use strict"
+export var lastPacketExport = [];
+
+
 
 document.addEventListener('DOMContentLoaded',function(){init();});
 
@@ -28,6 +31,9 @@ const init = function (e) {
             var lastPacket = recData[recData.length-1];
             console.log('lastPacket');
             console.log(lastPacket);
+            
+            lastPacketExport = lastPacket;
+
             var currentRadiation = lastPacket.weatherData.WSolarRadiation;
             var currentAmbentTemp = lastPacket.weatherData.WAmbientTemperature;
             var currentModuleTemp = lastPacket.weatherData.WPVModuleTemperature;
@@ -214,3 +220,4 @@ function chartUpdate(oldChart){
     console.log('printMe '+ printed);
     printed++;
 }
+
