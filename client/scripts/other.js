@@ -36,7 +36,7 @@ $(document).ready(function(){
     
     setInterval(() => {
         $("#ecoShow")
-            .fadeOut(1000,()=>{
+            .fadeOut(500,()=>{
                 $("#ecoLabel").text(ecoCycle[ecoIter].title);
                 //console.log(ecoCycle[ecoIter].icon);
                 $("#iconPath").attr('src',ecoCycle[ecoIter].icon);
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
                 //console.log(ecoDataExport);
             })
-            .fadeIn(1000);
+            .fadeIn(500);
     }, 5000);
 
     
