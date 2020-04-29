@@ -29,15 +29,41 @@ body {
     .header {
         
         width: 100%;
-        height: 200px;
-        
-        border-color: green;
-        border-width: 1px;
-        border-style: solid;
-        background-color: #ebd6ea;
+        height: 130px;
+        display:flex;
+        /* border-color: green; */
+        /* border-width: 1px;
+        border-style: solid; */
+        /* background-color: #ebd6ea; */
+        text-align: center;
+        border-radius: 10px;
     }
+        #headerCenter{
+            display: inline-block;
+            width: 100%;
+            /* border: 5px solid blue; */
+            /* margin-bottom: 10px; */
 
-    .dataContainer {
+        }
+            #headerTitle{
+                font-size: xx-large;
+                padding-top: -10;
+            }
+
+    #detailedContainer{
+        display:none;
+        /* background-color: rgba(104, 103, 165, 0.767); */
+        flex-grow: 1;
+    }
+        #detailedGrid{
+            display:grid;
+            gap:7px;
+            grid-template-rows: repeat(6,1fr);
+            /* background-color: rgba(20, 201, 14, 0.767); */
+            flex-grow: 1;
+        }
+
+    #dataContainer {
         display:grid;
         gap:7px;
         grid-template-columns: repeat(6,1fr);
@@ -47,7 +73,8 @@ body {
         /* border-color: red;
         border-width: 3px;
         border-style: solid; */
-        background-color: #ebd6ea;
+        /* background-color: #ebd6ea; */
+        
 
     }
         #ecoPlane{
@@ -171,6 +198,18 @@ body {
     width: 50px;
     
     margin: 0 auto;
+  }
+
+  .headerIcon{
+    height: 100%;
+    width: 100%;
+    
+    
+  }
+  .headerIconDim{
+    width:1906px;
+    height:100%;
+    /* border: 2px solid blue; */
   }
 
   .hheight{

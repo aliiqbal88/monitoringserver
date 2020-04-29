@@ -33,7 +33,12 @@ var ecoCycle = [{
 
 $(document).ready(function(){
     //console.log('after jquery');
-    
+    $("#inverterValues").click(()=>{
+        $("#dataContainer").fadeOut('fast',()=>{$("#detailedContainer").fadeIn('fast').css("display","flex")});
+        // alert($(".header").innerWidth());
+    })
+
+
     setInterval(() => {
         $("#ecoShow")
             .fadeOut(500,()=>{
