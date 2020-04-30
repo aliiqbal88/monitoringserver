@@ -7,7 +7,7 @@ console.log('beforeJquery');
 
 var ecoIter = 1;
 var ecoCycle = [{
-        title: "Coal Saved:",
+        title: "Coal Saved",
         icon: 'svg/coal.svg',
         value: 0,
         unit: " kg",
