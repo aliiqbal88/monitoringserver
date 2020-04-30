@@ -121,37 +121,53 @@ const init = function (e) {
 
                     //labels:theX,
                     datasets: [{
-                        label: 'power',
+                        label: 'Power Generation',
                         data: chartData,
-                        yAxisID: 'power',
+                        yAxisID: 'Power',
                         //backgroundColor:['green','blue','yellow','black'],
                         //borderWidth:5,
                         //borderColor:'#777',
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
                         fill: false,
-                        borderColor: "red"
+                        borderColor: "red",
+                        pointRadius:2,
+                        backgroundColor: 'rgba(255, 0, 0, 0.3)',
+                        pointStyle: 'line'
 
                     },
                     {
-                        label: 'solarIrradiance',
+                        label: 'Solar Irradiance',
                         data: solarChartData,
-                        yAxisID:'solarIrradiance',
+                        yAxisID:'Solar Irradiance',
                         //backgroundColor:['green','blue','yellow','black'],
                         //borderWidth:5,
                         //borderColor:'#777',
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
-                        fill: false,
-                        borderColor: "blue"
+                        fill: true,
+                        borderColor: "blue",
+                        pointRadius:2,
+                        backgroundColor: 'rgba(0, 0, 255, 0.3)',
+                        pointStyle: 'line'
                     }]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio:false,
+                    legend: {
+                        display: true,
+                        // position:'bottom',
+                        align:'end',
+                        
+                        labels:{
+                            usePointStyle:true
+                        }
+                    },
                     title: {
                         display: true,
-                        text: 'Solar Power Output',
-                        //fontSize:25
+                        text: 'System Output',
+                        fontSize:25
                     },
 
                     scales: {
@@ -174,26 +190,26 @@ const init = function (e) {
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Date'
+                                labelString: 'Time'
                             }
                         }],
                         yAxes: [
                             {
-                               id:'power',
+                               id:'Power',
                                 ticks: {beginAtZero:true},
                                 position:'left',
                                 scaleLabel: {
                                     display: true,
-                                    labelString: 'Value (Watts)'
+                                    labelString: 'Power (Watts)'
                                 }
                             }
                              ,{
-                                id:'solarIrradiance',
+                                id:'Solar Irradiance',
                                 position:'right',
                                 ticks: {beginAtZero:true},
                                 scaleLabel: {
                                     display: true,
-                                    labelString: 'ValuG'
+                                    labelString: 'Solar Irradiance (W/sq. m)'
 
 
                               }
