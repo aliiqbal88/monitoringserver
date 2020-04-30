@@ -75,6 +75,10 @@ const init = function (e) {
                 return (acc+iPoint.IActivePower)
             },0);
 
+            let lastRecordDateObject= new Date(iLastPacket.date);
+            let lastRecord = lastRecordDateObject.toString().substring(0,21);
+            console.log("date: " +lastRecord);
+
             console.log('cpo:' + currentPowerValue + ", dYie: " + dailyYieldValue + ", tyie: "+ totalYieldValue);
             ecoDataExport.totalYield = totalYieldValue;
 
@@ -84,7 +88,8 @@ const init = function (e) {
             document.getElementById("totalYieldValue").innerHTML = totalYieldValue + " kWh.";
             document.getElementById("moneySavedTodayValue").innerHTML = "Rs. " + Math.round(dailyYieldValue*20);
             document.getElementById("moneySavedTotalValue").innerHTML = "Rs. " + Math.round(totalYieldValue*20);
-
+            document.getElementById("lastRecord").innerHTML = "Last Record: " + lastRecord;
+    
             let chartData = recData.map(dataPoint => {
                 return {
                     //x: dataPoint.date.substring(11, 19),

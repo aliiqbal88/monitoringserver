@@ -76,37 +76,18 @@
     <title
        id="title4597">Layer 1</title>
     <text
-       transform="matrix(0.76970172,0,0,0.76970172,124.38626,33.702714)"
-       x="682.59381"
-       y="81.498512"
+       x="641.9577"
+       y="96.432259"
        id="svg_2"
        font-size="108.337578px"
        xml:space="preserve"
        font-weight="bold"
        font-style="normal"
-       style="font-style:normal;font-weight:bold;font-size:108.33757782px;font-family:Helvetica, Arial, sans-serif;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:0">    <tspan
+       style="font-style:normal;font-weight:bold;font-size:83.38761902px;font-family:Helvetica, Arial, sans-serif;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:0">    <tspan
    stroke="null"
-   y="81.498512"
-   x="682.59381"
+   y="96.432259"
+   x="641.9577"
    id="tspan4578"
    style="stroke-width:0">SOLAR e-VISION</tspan>  </text>
-    <text
-       transform="matrix(0.79643923,0,0,0.79643923,364.72047,24.548157)"
-       font-style="oblique"
-       font-weight="normal"
-       x="1521.5544"
-       y="122.70361"
-       id="svg_7"
-       font-size="20px"
-       xml:space="preserve"
-       style="font-style:oblique;font-weight:normal;font-size:20px;font-family:Helvetica, Arial, sans-serif;text-anchor:start;fill:#000000;fill-opacity:0.70048302;stroke:#000000;stroke-width:0">    <tspan
-   stroke="null"
-   font-style="oblique"
-   font-weight="normal"
-   font-size="20px"
-   y="122.70361"
-   x="1521.5544"
-   id="tspan4580"
-   style="font-style:oblique;font-weight:normal;font-size:20px;font-family:Helvetica, Arial, sans-serif;text-anchor:start;fill:#000000;fill-opacity:0.70048302;stroke-width:0">Developed by: TSK Engineering International</tspan>  </text>
   </g>
 </svg>
