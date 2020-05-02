@@ -163,12 +163,13 @@ const init = function (e) {
                         //borderColor:'#777',
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
-                        fill: true,
+                        fill: false,
                         borderColor: "rgba(0, 0, 255, 1)",
                         pointRadius:2,
-                        backgroundColor: 'rgba(0, 0, 255, 0.0)',
+                        backgroundColor: 'rgba(0, 0, 255, 0.2)',
                         pointStyle: 'line',
-                        borderWidth: 1.4
+                        borderWidth: 1.4,
+                        borderDash: [15, 3, 3, 3]
                     }]
                 },
                 options: {
