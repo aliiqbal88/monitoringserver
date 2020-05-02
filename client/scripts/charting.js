@@ -147,9 +147,9 @@ const init = function (e) {
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
                         fill: true,
-                        borderColor: "red",
+                        borderColor: 'rgba(9, 230, 9,1)',
                         pointRadius:2,
-                        backgroundColor: 'rgba(255, 0, 0, 0.3)',
+                        backgroundColor: 'rgba(9, 230, 9, 0.3)',
                         pointStyle: 'line'
 
                     },
@@ -163,9 +163,9 @@ const init = function (e) {
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
                         fill: true,
-                        borderColor: "blue",
+                        borderColor: "rgba(255, 123, 0, 1)",
                         pointRadius:2,
-                        backgroundColor: 'rgba(0, 0, 255, 0.3)',
+                        backgroundColor: 'rgba(255, 123, 0, 0.3)',
                         pointStyle: 'line'
                     }]
                 },
