@@ -28,13 +28,26 @@
      inkscape:window-height="1018"
      id="namedview4606"
      showgrid="false"
-     inkscape:zoom="0.76705142"
-     inkscape:cx="953"
-     inkscape:cy="65"
+     inkscape:zoom="1.0847745"
+     inkscape:cx="1001.3663"
+     inkscape:cy="164.79319"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g4560" />
+     inkscape:current-layer="g4560"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="970.11098,88.488201"
+       orientation="1,0"
+       id="guide845"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="960.49624,103.96956"
+       orientation="0,1"
+       id="guide847"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <metadata
      id="metadata4568">image/svg+xml<rdf:RDF>
@@ -89,5 +102,23 @@
    x="641.9577"
    id="tspan4578"
    style="stroke-width:0">SOLAR e-VISION</tspan>  </text>
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 960.47145,56.412388 -9.21914,-5.930906 c 0,0 -3.29242,-3.394202 -1.81465,-4.459928 1.81231,-1.648423 4.97842,1.17195 4.97842,1.17195 l 6.05537,9.218884"
+       id="path843"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 980.7035,46.296863 978.585,35.541392 c 0,0 0.16297,-4.725892 1.95555,-4.399969 2.44442,0.162962 2.60737,4.399969 2.60737,4.399969 l -2.44442,10.755471"
+       id="path843-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 997.97599,56.067173 6.28131,-8.98403 c 0,0 3.5185,-3.159335 4.5265,-1.641642 1.5774,1.874408 -1.3627,4.92962 -1.3627,4.92962 l -9.44511,5.696052"
+       id="path843-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
   </g>
 </svg>
