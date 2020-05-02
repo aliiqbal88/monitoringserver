@@ -36,6 +36,8 @@ const init = function (e) {
             console.log('wLastPacket');
             console.log(wLastPacket);
             
+            //first Packet
+            var iFirstPacket = recData[0];
             
 
             var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
@@ -75,11 +77,26 @@ const init = function (e) {
                 return (acc+iPoint.IActivePower)
             },0);
 
+            let firstRecordDateObject = new Date(iFirstPacket.date)
+            let firstRecord = firstRecordDateObject.toString().substring(0,21);
+            let firstRecordHour = parseInt(firstRecord.substring(16,18));
+            console.log("firstHour: " + firstRecordHour);
             let lastRecordDateObject= new Date(iLastPacket.date);
             let lastRecord = lastRecordDateObject.toString().substring(0,21);
+            let lastRecordHour = parseInt(lastRecord.substring(16,18));
+            console.log("lastHour: " + lastRecordHour);
             console.log("date: " +lastRecord);
 
-            console.log('cpo:' + currentPowerValue + ", dYie: " + dailyYieldValue + ", tyie: "+ totalYieldValue);
+            lastRecordHour++;
+            
+
+            let firstRecordHourString = firstRecordHour+":00";
+            let lastRecordHourString = lastRecordHour + ":00";
+            console.log("string First: " + firstRecordHourString);
+            console.log("string last: " + lastRecordHourString);
+
+
+            // console.log('cpo:' + currentPowerValue + ", dYie: " + dailyYieldValue + ", tyie: "+ totalYieldValue);
             ecoDataExport.totalYield = totalYieldValue;
 
 
@@ -184,8 +201,10 @@ const init = function (e) {
                                 },
                                 unit: 'minute',
                                 unitStepSize: 60,
-                                min: "6:00",
-                                max: "19:00"
+                                min: firstRecordHourString,
+                                max: lastRecordHourString
+                                // min: "6:00",
+                                // max: "19:00"
 
                             },
                             scaleLabel: {
