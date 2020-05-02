@@ -147,10 +147,11 @@ const init = function (e) {
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
                         fill: true,
-                        borderColor: 'rgba(9, 230, 9,1)',
+                        borderColor: 'rgba(255, 128, 0,1)',
                         pointRadius:2,
-                        backgroundColor: 'rgba(9, 230, 9, 0.3)',
-                        pointStyle: 'line'
+                        backgroundColor: 'rgba(255, 128, 0, 0.3)',
+                        pointStyle: 'line',
+                        borderWidth: 1.4
 
                     },
                     {
@@ -163,10 +164,11 @@ const init = function (e) {
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
                         fill: true,
-                        borderColor: "rgba(255, 123, 0, 1)",
+                        borderColor: "rgba(0, 0, 255, 1)",
                         pointRadius:2,
-                        backgroundColor: 'rgba(255, 123, 0, 0.3)',
-                        pointStyle: 'line'
+                        backgroundColor: 'rgba(0, 0, 255, 0.0)',
+                        pointStyle: 'line',
+                        borderWidth: 1.4
                     }]
                 },
                 options: {
