@@ -129,7 +129,7 @@ const init = function (e) {
                         //borderColor:'#777',
                         //hoverBorderWidth:10,
                         //hoverBorderColor:'red'
-                        fill: false,
+                        fill: true,
                         borderColor: "red",
                         pointRadius:2,
                         backgroundColor: 'rgba(255, 0, 0, 0.3)',
@@ -206,13 +206,17 @@ const init = function (e) {
                              ,{
                                 id:'Solar Irradiance',
                                 position:'right',
-                                ticks: {beginAtZero:true},
+                                ticks: {
+                                    beginAtZero:true,
+                                    max:2000
+                                },
                                 scaleLabel: {
                                     display: true,
                                     labelString: 'Solar Irradiance (W/sq. m)'
-
-
-                              }
+                                },
+                                gridLines: {
+                                    display:false
+                                }
                              }
                         ]
 
