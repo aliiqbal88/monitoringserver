@@ -98,7 +98,7 @@ router.get('/fetchData',cors(),(req,res)=>{
     let dateDate = date3.getDate();
     let dateMonth = date3.getMonth();
     let dateYear = date3.getFullYear();
-    let currentDate = new Date()
+    let currentDate = new Date(dateYear,dateMonth,dateDate,3,59,59)
     let currentDateString = currentDate.toString();
     console.log("dates:"+currentDateString);
     
