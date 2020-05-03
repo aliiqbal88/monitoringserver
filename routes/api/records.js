@@ -98,6 +98,9 @@ router.get('/fetchData',cors(),(req,res)=>{
     let dateDate = date3.getDate();
     let dateMonth = date3.getMonth();
     let dateYear = date3.getFullYear();
+    let currentDate = new Date()
+    let currentDateString = currentDate.toString();
+    console.log("dates:"+currentDateString);
     
     
     Record.find(
@@ -107,7 +110,7 @@ router.get('/fetchData',cors(),(req,res)=>{
         }).then(data=> {
             console.log('fetchHit2');
             //console.log(data[0].date);
-            console.log(data);
+            //console.log(data);
             res.json(data)}
         );
 })
