@@ -55,7 +55,7 @@ router.post('/monitoring',(req,res)=>{
             console.log(data);
             Record.deleteMany(
                 {
-                    date:{$lt:new Date(dateYearPost,dateMonthPost,dateDatePost,3,0,0)}
+                    date:{$lt:new Date(dateYearPost,dateMonthPost,dateDatePost,0,0,1)}
                 }
             ).then(()=>
                 console.log('deleted')
@@ -105,7 +105,7 @@ router.get('/fetchData',cors(),(req,res)=>{
     
     Record.find(
         {
-            date:{$gte:new Date(dateYear,dateMonth,dateDate,3,59,59), $lt:new Date(dateYear,dateMonth,dateDate,20,0,0)}
+            date:{$gte:new Date(dateYear,dateMonth,dateDate,0,0,1), $lt:new Date(dateYear,dateMonth,dateDate,3,0,0)}
             //date:{$gte:date3, $lt:date4}
         }).then(data=> {
             console.log('fetchHit2');
