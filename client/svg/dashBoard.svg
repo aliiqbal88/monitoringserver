@@ -59,6 +59,16 @@
        x2="274.85593"
        y2="506.2034"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(-3.2542366,2.1694869)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient2964"
+       id="linearGradient2966-8"
+       x1="256.66949"
+       y1="-99.084732"
+       x2="274.85593"
+       y2="506.2034"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      pagecolor="#beaedf"
@@ -76,27 +86,30 @@
      inkscape:pagecheckerboard="true"
      inkscape:zoom="0.4609375"
      inkscape:cx="-91.118644"
-     inkscape:cy="82.440678"
+     inkscape:cy="256"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg883" />
   <g
      id="g881"
-     transform="matrix(0.89348908,0,0,0.89348908,22.777978,-73.286486)">
+     transform="matrix(0.89348908,0,0,0.89348908,22.777978,-73.286486)"
+     style="opacity:0.612">
     <path
        d="m 433.62949,192.74 c -0.03,-0.04 -0.06,-0.07 -0.09,-0.11 -0.03,-0.04 -0.07,-0.06 -0.11,-0.09 a 247.988,247.988 0 0 0 -350.519998,0 c -0.04,0.03 -0.07,0.06 -0.11,0.09 -0.04,0.03 -0.06,0.07 -0.09,0.11 a 246.355,246.355 0 0 0 -72.54,175.26 8,8 0 0 0 8,8 h 64 a 8,8 0 0 0 8,-8 c 0,-92.64 75.359998,-168 167.999998,-168 92.64,0 168,75.36 168,168 a 8,8 0 0 0 8,8 h 64 a 8,8 0 0 0 8,-8 246.355,246.355 0 0 0 -72.54,-175.26 z M 74.339492,360 h -48.04 a 230.228,230.228 0 0 1 62.27,-150.29 l 34.029998,34.03 A 183.3,183.3 0 0 0 74.339492,360 Z M 250.16949,184.18 a 183.359,183.359 0 0 0 -116.27,48.24 L 99.879492,198.4 A 230.208,230.208 0 0 1 250.16949,136.15 Z m 16,0 v -48.03 a 230.208,230.208 0 0 1 150.29,62.25 l -34.02,34.02 a 183.359,183.359 0 0 0 -116.27,-48.24 z m 175.83,175.82 a 183.3,183.3 0 0 0 -48.26,-116.26 l 34.03,-34.03 a 230.228,230.228 0 0 1 62.27,150.29 z"
        id="path877"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       style="" />
     <path
        d="m 264,321.82656 c 0,-93.41908 0,-127.58777 0,-65.013 0,4.41828 -3.58172,-8 -8,-8 -4.41828,0 -8,3.58172 -8,8 v 65.013 c -15.60243,4.02853 -25.77549,19.03099 -23.7446,35.013 2.03083,15.98167 15.63139,27.9538 31.7446,27.9538 16.11321,0 29.71377,-11.97213 31.7446,-27.9538 2.03089,-15.98201 -8.14217,-30.98447 -23.7446,-35.013 z m -8,46.987 c -14.25547,0 -21.39205,-17.23422 -11.31313,-27.31313 C 254.76578,331.42151 272,338.55809 272,352.81356 c -0.0105,8.83222 -7.16778,15.98953 -16,16 z"
        id="path879"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cssscsssccscc" />
+       sodipodi:nodetypes="cssscsssccscc"
+       style="" />
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.46176147px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.91689867"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.46176147px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.91689867;opacity:0.612;"
      x="30.809338"
      y="328.39902"
      id="text1436"><tspan
@@ -104,13 +117,13 @@
        id="tspan1434"
        x="30.809338"
        y="328.39902"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.46176147px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.91689867">DASHBOARD</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.46176147px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.91689867;">DASHBOARD</tspan></text>
   <rect
-     style="opacity:0.332;fill:url(#linearGradient2966);fill-opacity:1;stroke:none;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4.0999999;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+     style="opacity:0.33200001;fill:url(#linearGradient2966-8);fill-opacity:1;stroke:none;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4.0999999;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
      id="rect1464"
      width="488.13559"
      height="329.76273"
-     x="10.847458"
-     y="13.728813"
+     x="7.5932293"
+     y="15.898299"
      ry="45.559322" />
 </svg>
