@@ -53,13 +53,13 @@ router.post('/monitoring',(req,res)=>{
         .then(data=>{
             console.log('here This Was saved');
             console.log(data);
-            Record.deleteMany(
-                {
-                    date:{$lt:new Date(dateYearPost,dateMonthPost,dateDatePost,0,0,1)}
-                }
-            ).then(()=>
-                console.log('deleted')
-            ).catch(()=>console.log('deleteErr'));
+            // Record.deleteMany(
+            //     {
+            //         date:{$lt:new Date(dateYearPost,dateMonthPost,dateDatePost,0,0,1)}
+            //     }
+            // ).then(()=>
+            //     console.log('deleted')
+            // ).catch(()=>console.log('deleteErr'));
             res.send('Data Received Successfully')
         })
         
