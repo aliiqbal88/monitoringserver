@@ -230,8 +230,8 @@ const init = function (e) {
                                 position:'right',
                                 ticks: {
                                     beginAtZero:true,
-                                    max:1500,
-                                    stepSize:250
+                                    max:1800,
+                                    stepSize:300
                                 },
                                 scaleLabel: {
                                     display: true,
