@@ -13,7 +13,9 @@ body {
     /* width:100%; */
     margin:0px;
     padding: 0px;
+    /* font-family: 'Lato'; */
   }
+
 
   .mainContainer{
     display:flex;
@@ -234,18 +236,35 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;
   }
-    #projectDescription{
-        grid-area: 1/2/2/3;
-        text-align: center;
+    /* #projectDescription{
+        grid-area: 1/1/2/2;
+        // text-align: center;
     }
     #clientDescription{
+        grid-area: 2/1/3/2;
+    } */
+    #firstDiv{
         grid-area: 1/1/2/2;
+    }
+    #secondDiv{
+        grid-area: 1/2/2/3;
+
     }
     #thirdDiv{
         grid-area: 1/3/2/4;
     }
     #companyDescription{
         text-align: right;
+    }
+    #dashDiv{
+        height: 100%;
+        /* background-color: blue; */
+        text-align: center;
+        
+    }
+    #dashIcon{
+        height: 40px;
+        
     }
     /* #lastRecordContainer{
         
@@ -261,4 +280,15 @@ body {
         text-align: right;
         font-style: oblique;
         color: indianred;
+    }
+
+    #outDashDiv{
+        position: absolute;
+        top:110px;
+        left: 50%;
+        /* right:50%; */
+    }
+    #outDashIcon{
+        height:70px;
+        margin-left: -50%;
     }
