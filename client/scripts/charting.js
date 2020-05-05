@@ -87,14 +87,20 @@ const init = function (e) {
             console.log("lastHour: " + lastRecordHour);
             console.log("date: " +lastRecord);
 
-            lastRecordHour++;
             
-
+            
+            // MIN AND MAX FOR THE X-AXIS
+            lastRecordHour++;
             let firstRecordHourString = firstRecordHour+":00";
             let lastRecordHourString = lastRecordHour + ":00";
             console.log("string First: " + firstRecordHourString);
             console.log("string last: " + lastRecordHourString);
 
+
+            // LAST RECORD FOR DISPLAY
+            let dateString = lastRecordDateObject.toISOString();
+            let newDateString = dateString.substring(8,10)+"/"+dateString.substring(5,7)+"/"+dateString.substring(0,4) + " " + dateString.substring(11,19)
+            console.log("newDateString : " + newDateString);
 
             // console.log('cpo:' + currentPowerValue + ", dYie: " + dailyYieldValue + ", tyie: "+ totalYieldValue);
             ecoDataExport.totalYield = totalYieldValue;
@@ -105,7 +111,7 @@ const init = function (e) {
             document.getElementById("totalYieldValue").innerHTML = totalYieldValue + " kWh.";
             document.getElementById("moneySavedTodayValue").innerHTML = "Rs. " + Math.round(dailyYieldValue*20);
             document.getElementById("moneySavedTotalValue").innerHTML = "Rs. " + Math.round(totalYieldValue*20);
-            document.getElementById("lastRecord").innerHTML = "Last Record: " + lastRecord;
+            document.getElementById("lastRecord").innerHTML = "Last Record: " + newDateString;
     
             let chartData = recData.map(dataPoint => {
                 return {
@@ -129,6 +135,9 @@ const init = function (e) {
 
             console.log('solarChartData')
             console.log(solarChartData);
+
+
+            //FIND MAX SOLAR DATA;
 
             //let theX = [new Date(2018, 11, 24, 10, 33, 30, 0),new Date(2018, 11, 24, 10, 45, 30, 0),new Date(2018, 11, 24, 10, 55, 30, 0),new Date(2018, 11, 24, 11, 13, 30, 0)];
             let massPopChart = new Chart(myChart, {
@@ -218,7 +227,10 @@ const init = function (e) {
                         yAxes: [
                             {
                                id:'Power',
-                                ticks: {beginAtZero:true},
+                                ticks: {
+                                    beginAtZero:true,
+                                    maxTicksLimit:7
+                                },
                                 position:'left',
                                 scaleLabel: {
                                     display: true,
@@ -226,12 +238,20 @@ const init = function (e) {
                                 }
                             }
                              ,{
+                                beforeUpdate: function(scale){
+                                    var nLeftTickCount = scale.chart.scales['Power'].ticks.length;
+                    
+                                    scale.chart.options.scales.yAxes[1].ticks.max = 2400;
+                                    scale.chart.options.scales.yAxes[1].ticks.stepSize = 2400/(nLeftTickCount-1)
+                                    //console.log("left tick count : " + nLeftTickCount );
+                                    return;
+                                },
                                 id:'Solar Irradiance',
                                 position:'right',
                                 ticks: {
                                     beginAtZero:true,
-                                    max:2400,
-                                    stepSize:400
+                                    //max:2400,
+                                    //stepSize:400
                                 },
                                 scaleLabel: {
                                     display: true,
