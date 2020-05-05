@@ -83,10 +83,14 @@ router.get('/fetchData',cors(),(req,res)=>{
     //let date1 = new Date(2020,4,5,0,59,59);
     //let date2 = new Date(2020,4,6,0,59,59);
     let date3 = new Date();
-    date4 = new Date();
+    let date4 = new Date();
+    
+    
+    
     date3.setHours(0,0,0,0);
-    //let date4 = new Date();
-    date3.setHours(date3.getHours()-2);
+    date3.setHours(date3.getHours()-2);     // we want 3am PST
+    
+    date4.setHours(15,0,0,0);
     //console.log(date3);
     //console.log(date4);
 
@@ -97,13 +101,13 @@ router.get('/fetchData',cors(),(req,res)=>{
     //date4.setMinutes(59);
     //console.log(date1);
     //console.log(date2);
-    let dateDate = date3.getDate();
-    let dateMonth = date3.getMonth();
-    let dateYear = date3.getFullYear();
+    // let dateDate = date3.getDate();
+    // let dateMonth = date3.getMonth();
+    // let dateYear = date3.getFullYear();
 
-    let dateDate1 = date4.getDate();
-    let dateMonth1 = date4.getMonth();
-    let dateYear1 = date4.getFullYear();
+    // let dateDate1 = date4.getDate();
+    // let dateMonth1 = date4.getMonth();
+    // let dateYear1 = date4.getFullYear();
     //let currentDate = new Date(dateYear,dateMonth,dateDate,3,59,59)
     let currentDateString = date3.toString();
     console.log("dates:"+currentDateString);
@@ -111,7 +115,7 @@ router.get('/fetchData',cors(),(req,res)=>{
     
     Record.find(
         {
-            date:{$gte:new Date(date3.getTime()), $lt:new Date(dateYear1,dateMonth1,dateDate1,15,0,0)}
+            date:{$gte:new Date(date3.getTime()), $lt:new Date(date4.getTime())}
             //date:{$gte:date3, $lt:date4}
         }).then(data=> {
             console.log('fetchHit2');
