@@ -22,7 +22,7 @@ router.post('/monitoring',(req,res)=>{
     console.log('POSThit')
     let datePost = new Date();
     datePost.setHours(0,0,0,0);
-    datePost.setHours(date3.getHours()-2);     // we want 3am PST
+    datePost.setHours(datePost.getHours()-2);     // we want 3am PST
     // let dateDatePost = datePost.getDate();
     // let dateMonthPost = datePost.getMonth();
     // let dateYearPost = datePost.getFullYear();
