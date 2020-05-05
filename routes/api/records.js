@@ -83,8 +83,9 @@ router.get('/fetchData',cors(),(req,res)=>{
     //let date1 = new Date(2020,4,5,0,59,59);
     //let date2 = new Date(2020,4,6,0,59,59);
     let date3 = new Date();
+    date3.setHours(0,0,0,0);
     //let date4 = new Date();
-    
+    date3.setHours(date3.getHours()-2);
     //console.log(date3);
     //console.log(date4);
 
@@ -98,14 +99,14 @@ router.get('/fetchData',cors(),(req,res)=>{
     let dateDate = date3.getDate();
     let dateMonth = date3.getMonth();
     let dateYear = date3.getFullYear();
-    let currentDate = new Date(dateYear,dateMonth,dateDate,3,59,59)
-    let currentDateString = currentDate.toString();
+    //let currentDate = new Date(dateYear,dateMonth,dateDate,3,59,59)
+    let currentDateString = date3.toString();
     console.log("dates:"+currentDateString);
     
     
     Record.find(
         {
-            date:{$gte:new Date(dateYear,dateMonth,dateDate,0,0,1), $lt:new Date(dateYear,dateMonth,dateDate,15,0,0)}
+            date:{$gte:new Date(date3.getTime()), $lt:new Date(dateYear,dateMonth,dateDate,15,0,0)}
             //date:{$gte:date3, $lt:date4}
         }).then(data=> {
             console.log('fetchHit2');
