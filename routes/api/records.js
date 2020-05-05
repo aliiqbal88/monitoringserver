@@ -106,7 +106,7 @@ router.get('/fetchData',cors(),(req,res)=>{
     
     Record.find(
         {
-            date:{$gte:new Date(date3.getTime()), $lt:new Date(dateYear,dateMonth,dateDate,15,0,0)}
+            date:{$gte:new Date(dateYear,dateMonth,dateDate,22,0,1), $lt:new Date(dateYear,dateMonth,dateDate,15,0,0)}
             //date:{$gte:date3, $lt:date4}
         }).then(data=> {
             console.log('fetchHit2');
