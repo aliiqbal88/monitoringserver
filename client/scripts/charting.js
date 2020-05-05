@@ -99,7 +99,8 @@ const init = function (e) {
 
             // LAST RECORD FOR DISPLAY
             let dateString = lastRecordDateObject.toISOString();
-            let newDateString = dateString.substring(8,10)+"/"+dateString.substring(5,7)+"/"+dateString.substring(0,4) + " " + dateString.substring(11,19)
+            // let newDateString = dateString.substring(8,10)+"/"+dateString.substring(5,7)+"/"+dateString.substring(0,4) + " " + dateString.substring(11,19)
+            let newDateString = dateString.substring(8,10)+"/"+dateString.substring(5,7)+"/"+dateString.substring(0,4) + " " + lastRecordDateObject.toString().substring(16,24);
             console.log("newDateString : " + newDateString);
 
             // console.log('cpo:' + currentPowerValue + ", dYie: " + dailyYieldValue + ", tyie: "+ totalYieldValue);
