@@ -21,9 +21,11 @@ const moment = require('moment-timezone');
 router.post('/monitoring',(req,res)=>{
     console.log('POSThit')
     let datePost = new Date();
-    let dateDatePost = datePost.getDate();
-    let dateMonthPost = datePost.getMonth();
-    let dateYearPost = datePost.getFullYear();
+    datePost.setHours(0,0,0,0);
+    datePost.setHours(date3.getHours()-2);     // we want 3am PST
+    // let dateDatePost = datePost.getDate();
+    // let dateMonthPost = datePost.getMonth();
+    // let dateYearPost = datePost.getFullYear();
     var newObject = req.body;
     var weatherDataTemp = req.body[0]
     newObject.shift();
@@ -53,13 +55,13 @@ router.post('/monitoring',(req,res)=>{
         .then(data=>{
             console.log('here This Was saved');
             console.log(data);
-            // Record.deleteMany(
-            //     {
-            //         date:{$lt:new Date(dateYearPost,dateMonthPost,dateDatePost,0,0,1)}
-            //     }
-            // ).then(()=>
-            //     console.log('deleted')
-            // ).catch(()=>console.log('deleteErr'));
+            Record.deleteMany(
+                {
+                    date:{$lt:new Date(datePost.getTime())}
+                }
+            ).then(()=>
+                console.log('deleted')
+            ).catch(()=>console.log('deleteErr'));
             res.send('Data Received Successfully')
         })
         
