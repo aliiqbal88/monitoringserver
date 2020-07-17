@@ -47,8 +47,8 @@ const init = function (e) {
             console.log(currentRadiation);
 
             document.getElementById("irradianceValue").innerHTML = currentRadiation+ " W/m sq.";
-            document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp+ " \xB0C";
-            document.getElementById("moduleTempValue").innerHTML = currentModuleTemp+ " \xB0C";
+            document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp.toFixed(1) + " \xB0C";
+            document.getElementById("moduleTempValue").innerHTML = currentModuleTemp.toFixed(1) + " \xB0C";
             document.getElementById("windSpeedValue").innerHTML = currentWindSpeed+ " m/s";
             
             
@@ -108,7 +108,7 @@ const init = function (e) {
 
 
             document.getElementById("outputPowerValue").innerHTML = currentPowerValue+ " W";
-            document.getElementById("dailyYieldValue").innerHTML = dailyYieldValue + " kWh";
+            document.getElementById("dailyYieldValue").innerHTML = Math.round(dailyYieldValue) + " kWh";
             document.getElementById("totalYieldValue").innerHTML = totalYieldValue + " kWh.";
             document.getElementById("moneySavedTodayValue").innerHTML = "Rs. " + Math.round(dailyYieldValue*20);
             document.getElementById("moneySavedTotalValue").innerHTML = "Rs. " + Math.round(totalYieldValue*20);
