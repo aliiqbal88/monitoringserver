@@ -46,7 +46,7 @@ const init = function (e) {
             var currentWindSpeed = wLastPacket.weatherData.WWindSpeed;
             console.log(currentRadiation);
 
-            document.getElementById("irradianceValue").innerHTML = currentRadiation+ " W/m sq.";
+            document.getElementById("irradianceValue").innerHTML = currentRadiation+ " W/m\u00B2";
             document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp.toFixed(1) + " \xB0C";
             document.getElementById("moduleTempValue").innerHTML = currentModuleTemp.toFixed(1) + " \xB0C";
             document.getElementById("windSpeedValue").innerHTML = currentWindSpeed+ " m/s";
@@ -107,9 +107,9 @@ const init = function (e) {
             ecoDataExport.totalYield = totalYieldValue;
 
 
-            document.getElementById("outputPowerValue").innerHTML = currentPowerValue+ " W";
+            document.getElementById("outputPowerValue").innerHTML = (currentPowerValue/1000).toFixed(2) + " kW";
             document.getElementById("dailyYieldValue").innerHTML = Math.round(dailyYieldValue) + " kWh";
-            document.getElementById("totalYieldValue").innerHTML = totalYieldValue + " kWh.";
+            document.getElementById("totalYieldValue").innerHTML = (totalYieldValue/1000).toFixed(2) + " MWh";
             document.getElementById("moneySavedTodayValue").innerHTML = "Rs. " + Math.round(dailyYieldValue*20);
             document.getElementById("moneySavedTotalValue").innerHTML = "Rs. " + Math.round(totalYieldValue*20);
             document.getElementById("lastRecord").innerHTML = "Last Record: " + newDateString;
@@ -118,9 +118,9 @@ const init = function (e) {
                 return {
                     //x: dataPoint.date.substring(11, 19),
                     x: formatTime(dataPoint.date),
-                    y: dataPoint.inverterData.reduce((acc, iPoint) => {
+                    y: (dataPoint.inverterData.reduce((acc, iPoint) => {
                         return acc + iPoint.IActivePower;
-                    }, 0)
+                    }, 0)/1000).toFixed(3)
                 }
             });
 
@@ -197,7 +197,7 @@ const init = function (e) {
                     title: {
                         display: true,
                         text: 'System Output',
-                        fontSize:25
+                        fontSize:35
                     },
 
                     scales: {
@@ -222,7 +222,8 @@ const init = function (e) {
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Time'
+                                labelString: 'Time',
+                                fontSize: 25
                             }
                         }],
                         yAxes: [
@@ -235,7 +236,9 @@ const init = function (e) {
                                 position:'left',
                                 scaleLabel: {
                                     display: true,
-                                    labelString: 'Power (Watts)'
+                                    labelString: 'Power Generation (kW)',
+                                    fontSize: 25
+                                    
                                 }
                             }
                              ,{
@@ -256,7 +259,8 @@ const init = function (e) {
                                 },
                                 scaleLabel: {
                                     display: true,
-                                    labelString: 'Solar Irradiance (W/sq. m)'
+                                    labelString: 'Solar Irradiance (W/m\u00B2)',
+                                    fontSize: 25
                                 },
                                 gridLines: {
                                     display:false

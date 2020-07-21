@@ -21,7 +21,7 @@ var ecoCycle = [{
         factor: 0.0214
     },
     {
-        title: "CO2 Reduced",
+        title: "CO\u2082 Reduced",
         icon: 'svg/co2.svg',
         value: 0,
         unit: " kg",

@@ -1,53 +1,125 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 368 368" style="enable-background:new 0 0 368 368;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M296,48c-39.704,0-72,32.304-72,72c0,4.416,3.576,8,8,8s8-3.584,8-8c0-30.88,25.128-56,56-56s56,25.12,56,56
-			s-25.128,56-56,56H8c-4.416,0-8,3.584-8,8s3.584,8,8,8h288c39.704,0,72-32.304,72-72S335.704,48,296,48z"/>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 368 368"
+   style="enable-background:new 0 0 368 368;"
+   xml:space="preserve"
+   sodipodi:docname="wind.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"><metadata
+   id="metadata4785"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs4783" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1680"
+   inkscape:window-height="1028"
+   id="namedview4781"
+   showgrid="false"
+   inkscape:zoom="0.64130435"
+   inkscape:cx="184"
+   inkscape:cy="184"
+   inkscape:window-x="1912"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Capa_1" />
+<g
+   id="g4736"
+   style="fill:#d8ffc9;fill-opacity:1">
+	<g
+   id="g4734"
+   style="fill:#d8ffc9;fill-opacity:1">
+		<path
+   d="M296,48c-39.704,0-72,32.304-72,72c0,4.416,3.576,8,8,8s8-3.584,8-8c0-30.88,25.128-56,56-56s56,25.12,56,56    s-25.128,56-56,56H8c-4.416,0-8,3.584-8,8s3.584,8,8,8h288c39.704,0,72-32.304,72-72S335.704,48,296,48z"
+   id="path4732"
+   style="fill:#d8ffc9;fill-opacity:1" />
 	</g>
 </g>
-<g>
-	<g>
-		<path d="M144,32c-30.88,0-56,25.12-56,56c0,4.416,3.584,8,8,8s8-3.584,8-8c0-22.056,17.944-40,40-40c22.056,0,40,17.944,40,40
-			c0,22.056-17.944,40-40,40H8c-4.416,0-8,3.584-8,8s3.584,8,8,8h136c30.88,0,56-25.12,56-56S174.88,32,144,32z"/>
+<g
+   id="g4742"
+   style="fill:#d8ffc9;fill-opacity:1">
+	<g
+   id="g4740"
+   style="fill:#d8ffc9;fill-opacity:1">
+		<path
+   d="M144,32c-30.88,0-56,25.12-56,56c0,4.416,3.584,8,8,8s8-3.584,8-8c0-22.056,17.944-40,40-40c22.056,0,40,17.944,40,40    c0,22.056-17.944,40-40,40H8c-4.416,0-8,3.584-8,8s3.584,8,8,8h136c30.88,0,56-25.12,56-56S174.88,32,144,32z"
+   id="path4738"
+   style="fill:#d8ffc9;fill-opacity:1" />
 	</g>
 </g>
-<g>
-	<g>
-		<path d="M280,224H8c-4.416,0-8,3.584-8,8c0,4.416,3.584,8,8,8h272c22.056,0,40,17.944,40,40c0,22.056-17.944,40-40,40
-			c-22.056,0-40-17.944-40-40c0-4.416-3.576-8-8-8s-8,3.584-8,8c0,30.88,25.128,56,56,56s56-25.12,56-56S310.872,224,280,224z"/>
+<g
+   id="g4748"
+   style="fill:#d8ffc9;fill-opacity:1">
+	<g
+   id="g4746"
+   style="fill:#d8ffc9;fill-opacity:1">
+		<path
+   d="M280,224H8c-4.416,0-8,3.584-8,8c0,4.416,3.584,8,8,8h272c22.056,0,40,17.944,40,40c0,22.056-17.944,40-40,40    c-22.056,0-40-17.944-40-40c0-4.416-3.576-8-8-8s-8,3.584-8,8c0,30.88,25.128,56,56,56s56-25.12,56-56S310.872,224,280,224z"
+   id="path4744"
+   style="fill:#d8ffc9;fill-opacity:1" />
 	</g>
 </g>
-<g>
+<g
+   id="g4750">
 </g>
-<g>
+<g
+   id="g4752">
 </g>
-<g>
+<g
+   id="g4754">
 </g>
-<g>
+<g
+   id="g4756">
 </g>
-<g>
+<g
+   id="g4758">
 </g>
-<g>
+<g
+   id="g4760">
 </g>
-<g>
+<g
+   id="g4762">
 </g>
-<g>
+<g
+   id="g4764">
 </g>
-<g>
+<g
+   id="g4766">
 </g>
-<g>
+<g
+   id="g4768">
 </g>
-<g>
+<g
+   id="g4770">
 </g>
-<g>
+<g
+   id="g4772">
 </g>
-<g>
+<g
+   id="g4774">
 </g>
-<g>
+<g
+   id="g4776">
 </g>
-<g>
+<g
+   id="g4778">
 </g>
 </svg>

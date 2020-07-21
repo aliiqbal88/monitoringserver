@@ -54,6 +54,9 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/0.6.3/chartjs-plugin-zoom.js"></script> -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styleSheet.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> <!--LAto font link -->
+  
   <title>My Chart.js charset</title>
 </head>
 
@@ -84,10 +87,10 @@
     <div id="subHeader">
       <div id="firstDiv">
         <div id="projectDescription">
-          Project: Solarization of Civil Secretariat
+          <u> Client: Pakhtunkhwa Energy Development Organization</u>
         </div>
         <div id="clientDescription">
-          Client: Pakhtunkhwa Energy Development Organization
+          Project: Solarization of Civil Secretariat
         </div>
       </div>
       <!-- <div id="secondDiv">
@@ -97,7 +100,7 @@
       </div> -->
       <div id="thirdDiv">
         <div id="companyDescription">
-          Developed by: TSK Engineering International (Pvt) Ltd
+          <u>Developed by: TSK Engineering International (Pvt) Ltd</u>
         </div>
         <div id="lastRecordContainer">
           <div id="lastRecord">
@@ -128,8 +131,10 @@
               <img src="svg/power.svg" alt="like" class="iconDim">
             </div>
             Current Power Generation
-            <div id="outputPowerValue">
-              0 kW
+            <div>
+              <div id="outputPowerValue">
+                0 kW
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +168,7 @@
             <div class="icon">
               <img src="svg/money.svg" alt="like" class="iconDim">
             </div>
-            Revenue Saved (Today)
+            Revenue Saved <br> <span class="reduceFont">(Today)</span>
             <div id="moneySavedTodayValue" class="weatherPlane" >
               Rs. 0
             </div> 
@@ -175,7 +180,7 @@
             <div class="icon">
               <img src="svg/money.svg" alt="like" class="iconDim">
             </div>
-            Revenue Saved (Total)
+            Revenue Saved <br> <span class="reduceFont">(Total)</span>
             <div id="moneySavedTotalValue" class="weatherPlane">
               Rs. 0
             </div> 
@@ -184,53 +189,55 @@
       </div>
 
       <div id="weatherPlane">
-        <div id="irradiance" class="weatherStyle box">
+        <div id="irradiance" class="weatherStyle2 box">
           <div class="allCenter">
             <div class="icon">
               <img src="svg/sun.svg" alt="like" class="iconDim">
             </div>
             Solar Irradiance
-            <div id="irradianceValue" class="weatherPlane">
-              0 w/m sq.
+            <div id="irradianceValue" class="weatherPlane2">
+              0 W/m²
             </div>
           </div>
-      </div>
-        <div id="ambientTemp" class="weatherStyle box">
+        </div>
+        <div id="ambientTemp" class="weatherStyle2 box">
           <div class="allCenter">
             <div class="icon">
               <img src="svg/temperature.svg" alt="like" class="iconDim">
             </div>
-            Ambient Temperature
-            <div id="ambientTempValue" class="weatherPlane">
+            <div>
+              Ambient Temp.
+            </div>
+            <div id="ambientTempValue" class="weatherPlane2">
               0 °C
             </div>
           </div>
         </div>
-        <div id="moduleTemp" class="weatherStyle box">
+        <div id="moduleTemp" class="weatherStyle2 box">
           <div class="allCenter">
             <div class="icon">
               <img src="svg/solarTemp.svg" alt="like" class="iconDim">
             </div>
-            Module Temperature
-            <div id="moduleTempValue" class="weatherPlane">
+            Module Temp.
+            <div id="moduleTempValue" class="weatherPlane2">
               0 °C
             </div>
           </div>
         </div>
-        <div id="windSpeed" class="weatherStyle box hheight">
+        <div id="windSpeed" class="weatherStyle2 box hheight">
           <div class="allCenter">
             <div class="icon">
               <img src="svg/wind.svg" alt="like" class="iconDim">
             </div>
             Wind Speed
-            <div id="windSpeedValue" class="weatherPlane">
+            <div id="windSpeedValue" class="weatherPlane2">
               0 m/s
             </div>
           </div>
         </div>
       </div>
 
-      <div id="ecoPlane" class="weatherStyle box">
+      <div id="ecoPlane" class="weatherStyle2 box">
         <div id="ecoShow" class="allCenter">
           <div class="icon">
             <img id="iconPath" class="iconDim" src="svg/coal.svg" alt="like">
@@ -240,7 +247,7 @@
             Coal Saved
           </div>
           
-          <div id="ecoValue" class="weatherPlane">
+          <div id="ecoValue" class="weatherPlane2">
             0 kg
           </div>
         </div>
