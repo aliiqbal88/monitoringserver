@@ -1,6 +1,6 @@
 "use strict"
 export var ecoDataExport = {totalYield:0};
-
+import { inverterConfig } from './inverterConfig.js'
 
 
 
@@ -30,15 +30,54 @@ const init = function (e) {
             console.log("jsonData Received");
             console.log(jsonData);
 
+
+            
+
             //  display of other items
             var wLastPacket = wRecData[wRecData.length-1];
             var iLastPacket = recData[recData.length -1];
             console.log('wLastPacket');
             console.log(wLastPacket);
             
+            console.log('iLastPacket');
+            console.log(iLastPacket);
             //first Packet
             var iFirstPacket = recData[0];
             
+            
+            var mappedArray = inverterConfig.map( loc =>{
+                let locationArray = iLastPacket.inverterData.filter( dev => loc.inverter_addresses.includes(dev.DeviceAddress) ); // sorted inverter packets according to location and puts them in an array
+                
+                let fault_code = locationArray.map(fault => {
+                    return fault.IFaultCode;
+                });
+
+                let total_yield = locationArray.reduce( (total,t_yield)=>{
+                    return total + t_yield.ITotalPowerYield;
+                },0);
+
+                let daily_yield = locationArray.reduce( (total,d_yield)=>{
+                    return total + d_yield.IDailyPowerYield;
+                },0);
+
+                let power_generation = locationArray.reduce( (total,p_gen)=>{
+                    return total + p_gen.IActivePower;
+                },0);
+
+                return ({
+                    location: loc.location,
+                    fault_code: fault_code,
+                    daily_yield: daily_yield,
+                    total_yield: total_yield,
+                    power_generation:power_generation
+                });
+
+            })
+
+            console.log("mappedArray");
+            console.log(mappedArray)
+
+            //iLastPacket.inverterData.filter()
 
             var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
             var currentAmbentTemp = wLastPacket.weatherData.WAmbientTemperature;
