@@ -77,7 +77,11 @@ const init = function (e) {
             console.log("mappedArray");
             console.log(mappedArray)
 
-            //iLastPacket.inverterData.filter()
+            //DETAILED ARRAY
+            
+            //document.getElementById("oneID").innerHTML = mappedArray[1].location + " " + mappedArray[1].power_generation;
+            
+            ////////////////
 
             var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
             var currentAmbentTemp = wLastPacket.weatherData.WAmbientTemperature;

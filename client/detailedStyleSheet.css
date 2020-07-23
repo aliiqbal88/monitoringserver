@@ -1,0 +1,65 @@
+
+/* SECOND PAGE CSS */
+
+#detailedGrid{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-column-gap: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+
+}
+
+#oneID{
+    grid-area: 1/1/2/2;
+    
+   
+}
+#twoID{
+    grid-area: 1/2/2/3;
+}
+#threeID{
+    grid-area: 1/3/2/4;
+}
+#fourID{
+    grid-area: 2/1/3/2;
+}
+#fiveID{
+    grid-area: 2/2/3/3;
+}
+#sixID{
+    grid-area: 2/3/3/4;
+}
+#sevenID{
+    grid-area: 3/2/4/3;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+
+.detailedInnerBox{
+    display: flex;
+    align-items: center;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    
+    
+    
+}
+
+.mainTableWidth{
+    width:36%;
+}
+
+.valueTableWidth{
+    width:14%;
+}
+

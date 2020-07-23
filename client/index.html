@@ -55,7 +55,8 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/0.6.3/chartjs-plugin-zoom.js"></script> -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styleSheet.css">
-
+  <link rel="stylesheet" type="text/css" href="detailedStyleSheet.css">
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> <!--LAto font link -->
   
   <title>Solar-e-Vision</title>
@@ -111,15 +112,65 @@
       </div>  
 
     </div>
-
+    <!-- SECOND PAGE -->
     <div id="detailedContainer">
       <div id = "detailedGrid">
-        <div id="financeBuildingID">
+        <div id="oneID" class="box">
+          
+          <div class="detailedInnerBox">
+            
+            <table width="90%">
+              <tr>
+                <td class="mainTableWidth">Location</td>
+                
+                <td class="valueTableWidth" id="oneLocation">nice</td>
+              </tr>
+              <tr>
+                <td class="mainTableWidth">Number of Inverters</td>
+                <td id="oneNumInv">nice</td>
+                <td class="mainTableWidth">Power Generation</td>
+                <td id="onePowerGeneration"></td>
+              </tr>
+              <tr>
+                <td class="mainTableWidth">Daily Yield</td>
+                <td id="oneDailyYield"></td>
+                <td class="mainTableWidth">Total Yield</td>
+                <td id="oneTotalYield"></td>
+              </tr>
+              <tr>
+                <td class="mainTableWidth">Status</td>
+                <td id="oneFaultCode" class="valueTableWidth"></td>
+              </tr>
+            </table>
+            
+          </div>
 
         </div>
+
+        <div id="twoID" class="box">
+
+        </div>
+        <div id="threeID" class="box">
+
+        </div>
+        <div id="fourID" class="box">
+
+        </div>
+        <div id="fiveID" class="box">
+
+        </div>
+        <div id="sixID" class="box">
+
+        </div>
+        <div id="sevenID" class="box">
+
+        </div>
+
       </div>
     </div>
+    <!--  -->
 
+    <!-- FIRST PAGE -->
     <div id="dataContainer">
       <div id="chart" class="weatherStyle">
         <div class="chartClass">
