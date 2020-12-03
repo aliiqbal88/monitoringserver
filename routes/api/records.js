@@ -127,4 +127,29 @@ router.get('/fetchData',cors(),(req,res)=>{
         );
 })
 
+var request = require('request');
+router.get('/odkFetch',cors(),(req,res)=>{
+    let cred="aliiqbal88@gmail.com:scienceorthewin";
+    let base64data = Buffer.from(cred).toString('base64');
+    // let buff = new Buffer(cred);
+   // let base64data = buff.toString('base64')
+    request({
+        method: 'GET',
+        url: 'https://sitesurvey.panelsolar.si/v1/projects/2/forms/build_4k-Final-Testing-Form_1605795109/submissions/',
+        headers: {
+          'Authorization': 'Basic ' + base64data,
+          'X-Extended-Metadata': true
+
+        }}, function (error, response, body) {
+        console.log('Status:', response.statusCode);
+        console.log('Headers:', JSON.stringify(response.headers));
+        console.log('Response:', body);
+        
+      });
+    console.log('yoyoyo');
+    console.log(base64data);
+    res.json({yo:'hereitis'});
+})
+
+
 module.exports = router;

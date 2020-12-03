@@ -4,7 +4,6 @@
   "description": "pehla pehla app for deployment full stact",
   "main": "server.js",
   "scripts": {
-    
     "start": "node server.js",
     "server": "nodemon server.js"
   },
@@ -16,7 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "moment-timezone": "^0.5.28",
-    "mongoose": "^5.9.7"
+    "mongoose": "^5.9.7",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

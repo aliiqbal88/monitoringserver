@@ -27,6 +27,10 @@ app.use('/api/records',records);
 const path = require('path');
 app.use('/client',express.static(path.join(__dirname, 'client')));
 
+
+
+// @Serve ODK Page
+app.use('/odk',express.static(path.join(__dirname, 'odk')));
 // port definition
 /*
 app.listen(process.env.port || 5000);

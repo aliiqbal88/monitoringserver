@@ -19,13 +19,17 @@ const init = function (e) {
     console.log('fetching');
     fetch(urlFetch, { mode: 'cors' })
         .then(res => {
-            console.log('hereitisfetch');
+            console.log('hereitisfetch_v2');
             console.log(res.status);
             console.log('resFinish');
             return res.json();
         })
         .then(jsonData => {
-            recData = jsonData.filter(pkt=>pkt.iPktSuccess==true);     // @recdata is fetched data and filtered for inverter succfess
+            //recData = jsonData.filter(pkt=>pkt.iPktSuccess==true);     // @recdata is fetched data and filtered for inverter succfess
+
+            recData = jsonData;
+
+
             wRecData = jsonData.filter((pkt=>pkt.wPktSuccess==true))    // recData for weather success
             console.log("jsonData Received");
             console.log(jsonData);
@@ -110,14 +114,39 @@ const init = function (e) {
             // console.log("Old Date corrected " + oldDateCorrected.getHours()+":"+oldDateCorrected.getMinutes()+":"+oldDateCorrected.getSeconds());
             // console.log("Date corrected " + dateCorrected);
 
+
+            let midValue = 0;       // getting rid of keys not present due to comm error
             let dailyYieldValue = iLastPacket.inverterData.reduce((acc,iPoint)=>{
-                return (acc+iPoint.IDailyPowerYield)
+                
+                if (!("IDailyPowerYield" in iPoint)){
+                    midValue = 0;
+                    
+                } else {
+                    midValue = iPoint.IDailyPowerYield;
+                }
+                return (acc+midValue)
             },0);
+            
             let totalYieldValue = iLastPacket.inverterData.reduce((acc,iPoint)=>{
-                return (acc+iPoint.ITotalPowerYield)
+                
+                if (!("ITotalPowerYield" in iPoint)){
+                    midValue = 0;
+                    //console.log(midDailyYieldValue);
+                } else{
+                    midValue = iPoint.ITotalPowerYield;
+                }
+                return (acc+midValue)
             },0)
+
             let currentPowerValue = iLastPacket.inverterData.reduce((acc,iPoint)=>{
-                return (acc+iPoint.IActivePower)
+                if (!("IActivePower" in iPoint)){
+                    midValue = 0;
+                    //console.log(midDailyYieldValue);
+                } else{
+                    midValue = iPoint.IActivePower;
+                }
+                return (acc+midValue)
+                //return (acc+iPoint.IActivePower)
             },0);
 
             let firstRecordDateObject = new Date(iFirstPacket.date)
@@ -162,7 +191,14 @@ const init = function (e) {
                     //x: dataPoint.date.substring(11, 19),
                     x: formatTime(dataPoint.date),
                     y: (dataPoint.inverterData.reduce((acc, iPoint) => {
-                        return acc + iPoint.IActivePower;
+                        if (!("IActivePower" in iPoint)){
+                            midValue = 0;
+                            //console.log(midDailyYieldValue);
+                        } else{
+                            midValue = iPoint.IActivePower;
+                        }
+                        return acc + midValue;
+                        //return acc + iPoint.IActivePower;
                     }, 0)/1000).toFixed(3)
                 }
             });
