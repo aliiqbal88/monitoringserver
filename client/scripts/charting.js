@@ -38,48 +38,51 @@ const init = function (e) {
             
 
             //  display of other items
-            var wLastPacket = wRecData[wRecData.length-1];
+            var wLastPacket = wRecData[wRecData.length-1]; //CHECK WHERE THIS LEADS
             var iLastPacket = recData[recData.length -1];
-            console.log('wLastPacket');
-            console.log(wLastPacket);
+            
+            // CHECK WHERE WEATHER LAST PACKET IS USED. THATS THE SOURCE OF THE PROBLEM
+            // console.log('wLastPacket');
+            // console.log(wLastPacket);
             
             console.log('iLastPacket');
             console.log(iLastPacket);
             //first Packet
             var iFirstPacket = recData[0];
             
-            
-            var mappedArray = inverterConfig.map( loc =>{
-                let locationArray = iLastPacket.inverterData.filter( dev => loc.inverter_addresses.includes(dev.DeviceAddress) ); // sorted inverter packets according to location and puts them in an array
+            //// DO AWAY WITH THIS INVERTER CONFIG FOR NOW. WE DONT NEED IT. CHECK BACK LATER.
+            //// THIS PART DOES SOMETHING ABOUT INDIVIDUAL INVERTERS. GROUPED IN BUILDINGS.             
+            // var mappedArray = inverterConfig.map( loc =>{
+            //     let locationArray = iLastPacket.inverterData.filter( dev => loc.inverter_addresses.includes(dev.DeviceAddress) ); // sorted inverter packets according to location and puts them in an array
                 
-                let fault_code = locationArray.map(fault => {
-                    return fault.IFaultCode;
-                });
+            //     let fault_code = locationArray.map(fault => {
+            //         return fault.IFaultCode;
+            //     });
 
-                let total_yield = locationArray.reduce( (total,t_yield)=>{
-                    return total + t_yield.ITotalPowerYield;
-                },0);
+            //     let total_yield = locationArray.reduce( (total,t_yield)=>{
+            //         return total + t_yield.ITotalPowerYield;
+            //     },0);
 
-                let daily_yield = locationArray.reduce( (total,d_yield)=>{
-                    return total + d_yield.IDailyPowerYield;
-                },0);
+            //     let daily_yield = locationArray.reduce( (total,d_yield)=>{
+            //         return total + d_yield.IDailyPowerYield;
+            //     },0);
 
-                let power_generation = locationArray.reduce( (total,p_gen)=>{
-                    return total + p_gen.IActivePower;
-                },0);
+            //     let power_generation = locationArray.reduce( (total,p_gen)=>{
+            //         return total + p_gen.IActivePower;
+            //     },0);
 
-                return ({
-                    location: loc.location,
-                    fault_code: fault_code,
-                    daily_yield: daily_yield,
-                    total_yield: total_yield,
-                    power_generation:power_generation
-                });
+            //     return ({
+            //         location: loc.location,
+            //         fault_code: fault_code,
+            //         daily_yield: daily_yield,
+            //         total_yield: total_yield,
+            //         power_generation:power_generation
+            //     });
 
-            })
+            // })
 
-            console.log("mappedArray");
-            console.log(mappedArray)
+            // console.log("mappedArray");
+            // console.log(mappedArray)
 
             //DETAILED ARRAY
             
@@ -87,16 +90,17 @@ const init = function (e) {
             
             ////////////////
 
-            var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
-            var currentAmbentTemp = wLastPacket.weatherData.WAmbientTemperature;
-            var currentModuleTemp = wLastPacket.weatherData.WPVModuleTemperature;
-            var currentWindSpeed = wLastPacket.weatherData.WWindSpeed;
-            console.log(currentRadiation);
+            //// THIS IS THE WEATHER DATA. GET BACK TO THIS IN THE CODE EXTENSION ////
+            // var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
+            // var currentAmbentTemp = wLastPacket.weatherData.WAmbientTemperature;
+            // var currentModuleTemp = wLastPacket.weatherData.WPVModuleTemperature;
+            // var currentWindSpeed = wLastPacket.weatherData.WWindSpeed;
+            // console.log(currentRadiation);
 
-            document.getElementById("irradianceValue").innerHTML = currentRadiation+ " W/m\u00B2";
-            document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp.toFixed(1) + " \xB0C";
-            document.getElementById("moduleTempValue").innerHTML = currentModuleTemp.toFixed(1) + " \xB0C";
-            document.getElementById("windSpeedValue").innerHTML = currentWindSpeed+ " m/s";
+            // document.getElementById("irradianceValue").innerHTML = currentRadiation+ " W/m\u00B2";
+            // document.getElementById("ambientTempValue").innerHTML = currentAmbentTemp.toFixed(1) + " \xB0C";
+            // document.getElementById("moduleTempValue").innerHTML = currentModuleTemp.toFixed(1) + " \xB0C";
+            // document.getElementById("windSpeedValue").innerHTML = currentWindSpeed+ " m/s";
             
             
             //Global Options
