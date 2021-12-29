@@ -90,7 +90,7 @@ const init = function (e) {
             
             ////////////////
 
-            //// THIS IS THE WEATHER DATA. GET BACK TO THIS IN THE CODE EXTENSION ////
+            //// THIS IS THE WEATHER DATA. GET BACK TO THIS IN THE CODE EXTENSION //
             // var currentRadiation = wLastPacket.weatherData.WSolarRadiation;
             // var currentAmbentTemp = wLastPacket.weatherData.WAmbientTemperature;
             // var currentModuleTemp = wLastPacket.weatherData.WPVModuleTemperature;
