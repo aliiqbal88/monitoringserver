@@ -36,7 +36,8 @@ const RecordSchema = new Schema({
         default:Date.now
     },
     wPktSuccess: Boolean,
-    iPktSuccess: Boolean
+    iPktSuccess: Boolean,
+    loggerNumber: Number
     
 });
 

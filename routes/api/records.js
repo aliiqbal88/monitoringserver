@@ -18,6 +18,48 @@ router.get('/',(req, res)=>{
 
 const moment = require('moment-timezone');
 
+router.post('/monitoring2',(req,res)=>{
+    console.log('logger2Hit');
+    let datePost = new Date();
+    datePost.setHours(0,0,0,0);
+    datePost.setHours(datePost.getHours()-2);     // we want 3am PST
+    var newObject = req.body;
+    var weatherDataTemp = req.body[0];
+    newObject.shift();
+    var validationTemp = newObject.pop();
+
+    var inverterDataTemp = newObject;
+    console.log(inverterDataTemp)
+
+    var newRecord = new Record({
+        weatherData: weatherDataTemp,
+        inverterData: inverterDataTemp,
+        wPktSuccess: validationTemp.wPktSuccess,
+        iPktSuccess: validationTemp.iPktSuccess,
+        loggerNumber: 2
+        //date: today
+  
+      })
+      newRecord.save()
+          .then(data=>{
+              console.log('here This Was saved');
+              console.log(data);
+              Record.deleteMany(
+                  {
+                      date:{$lt:new Date(datePost.getTime())}
+                  }
+              ).then(()=>
+                  console.log('deleted')
+              ).catch(()=>console.log('deleteErr'));
+              res.send('Data Received Successfully')
+          })
+          
+          .catch(err=>console.log(err));
+      
+      //res.json({hiThere:req.body[2]['ICOMPort']})
+
+});
+
 router.post('/monitoring',(req,res)=>{
     console.log('POSThit')
     let datePost = new Date();
@@ -54,7 +96,8 @@ router.post('/monitoring',(req,res)=>{
       //weatherData: weatherDataTemp,
       inverterData: inverterDataTemp,
       wPktSuccess: validationTemp.wPktSuccess,
-      iPktSuccess: validationTemp.iPktSuccess
+      iPktSuccess: validationTemp.iPktSuccess,
+      loggerNumber: 1
       //date: today
 
     })
