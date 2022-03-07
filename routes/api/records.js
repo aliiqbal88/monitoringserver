@@ -37,9 +37,7 @@ router.post('/monitoring',(req,res)=>{
     //newObject.shift();
 
     var validationTemp = newObject.pop();
-    console.log('validation packet')
-    console.log(validationTemp)
-    console.log('rest of the data coming up')
+    
     
     var inverterDataTemp = newObject
     console.log(inverterDataTemp);
@@ -53,7 +51,7 @@ router.post('/monitoring',(req,res)=>{
     //console.log(today.format());
     //console.log(todayX);
     var newRecord = new Record({
-      weatherData: weatherDataTemp,
+      //weatherData: weatherDataTemp,
       inverterData: inverterDataTemp,
       wPktSuccess: validationTemp.wPktSuccess,
       iPktSuccess: validationTemp.iPktSuccess

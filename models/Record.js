@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 // Create schema
 
+
 const RecordSchema = new Schema({
     weatherData:{
         DeviceAddress: Number,
