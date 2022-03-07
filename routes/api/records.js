@@ -28,6 +28,11 @@ router.post('/monitoring',(req,res)=>{
     // let dateYearPost = datePost.getFullYear();
     var newObject = req.body;
     var weatherDataTemp = req.body[0]
+    
+    console.log('faultyPacket:')
+    console.log(weatherDataTemp)
+    console.log('rest of the data coming up')
+
     newObject.shift();
 
     var validationTemp = newObject.pop();
