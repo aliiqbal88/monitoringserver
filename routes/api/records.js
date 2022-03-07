@@ -27,15 +27,19 @@ router.post('/monitoring',(req,res)=>{
     // let dateMonthPost = datePost.getMonth();
     // let dateYearPost = datePost.getFullYear();
     var newObject = req.body;
-    var weatherDataTemp = req.body[0]
-    
-    console.log('faultyPacket:')
-    console.log(weatherDataTemp)
-    console.log('rest of the data coming up')
 
-    newObject.shift();
+    ////THIS PORTION DEALTH WITH THE WEATHER DATA. CHECK IT FOR LOGGER2
+    //var weatherDataTemp = req.body[0]
+    //console.log('faultyPacket:')
+    //console.log(weatherDataTemp)
+    //console.log('rest of the data coming up')
+
+    //newObject.shift();
 
     var validationTemp = newObject.pop();
+    console.log('validation packet')
+    console.log(validationTemp)
+    console.log('rest of the data coming up')
     
     var inverterDataTemp = newObject
     console.log(inverterDataTemp);
