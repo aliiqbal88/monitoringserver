@@ -15,7 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "moment-timezone": "^0.5.28",
-    "mongoose": "^5.9.7",
+    "mongoose": "^5.13.15",
     "request": "^2.88.2"
   },
   "devDependencies": {
